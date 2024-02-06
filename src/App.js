@@ -1,10 +1,20 @@
 import React from 'react';
+import { Connect } from 'react-redux';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      Async Redux Project
+      <h1>Current Weather Report</h1>
+
+      <form>
+        <input>
+        <button>Search</button>
+        </input>
+      </form>
+
+
+
     </div>
   );
 }
