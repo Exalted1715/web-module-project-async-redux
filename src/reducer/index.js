@@ -1,4 +1,4 @@
-import data from './data/weatherData';
+import data from './../data/weatherData';
 
 const intialState = {
    weather: data,

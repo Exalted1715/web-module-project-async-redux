@@ -1,14 +1,18 @@
 import React from 'react';
+import {connect} from 'react-redux'
 import CurrentWeather from './components/CurrentWeather';
 import WeatherForm from './components/WeatherForm';
 import WeatherList from './components/WeatherList'; // Import WeatherList component
 import './App.css';
-import data from './data/weatherData';
+
 
 function App(props) {
   //const weather = data;
  // const loading = false;
  // const error = '';
+
+ 
+const {loading, weather} = props
 
   return (
     <div className="App">
@@ -20,4 +24,11 @@ function App(props) {
   );
 }
 
-export default App;
+const mapStateToProps = state => {
+  return{
+    weather: state.weather,
+    loading: state.loading
+  }
+}
+
+export default connect(mapStateToProps)(App);
