@@ -10,10 +10,12 @@ const CurrentWeather = (props) => {
             <div>
                 <p> Humidity Picture Placeholder</p> {/* Corrected spelling of "Humidity" */}
                 <h3>{weather.dewpt}</h3> {/* Assuming dewpt is the correct property */}
+                <p>Humidity</p>
             </div>
             <div>
                 <p> Wind Speed Picture Placeholder</p>
                 <h3>{weather.wind_spd}</h3> {/* Assuming wind_spd is the correct property */}
+                <p>Wind</p>
             </div>
         </div>
     );
