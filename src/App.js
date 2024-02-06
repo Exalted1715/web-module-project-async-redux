@@ -3,12 +3,13 @@ import { connect } from 'react-redux';
 import CurrentWeather from './components/CurrentWeather'
 import WeatherForm from './components/WeatherForm';
 import './App.css';
-//import { data } from 'msw/lib/types/context';
+import { data } from './weatherData'
 
 function App(props) {
   const weather = data
-  const loaind = false
+  const loading = false
   const error = ''
+
   return (
     <div className="App">
       <h1>Current Weather Report</h1>

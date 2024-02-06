@@ -42,7 +42,6 @@ const data =[
        "lat":35.7721,
        "slp":1022.2
     }
- ],
- "minutely":[ ... ],
- "count":1
-}
+ ]
+
+export default data
