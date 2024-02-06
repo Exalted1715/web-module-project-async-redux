@@ -6,9 +6,9 @@ import './App.css';
 import data from './data/weatherData';
 
 function App(props) {
-  const weather = data;
-  const loading = false;
-  const error = '';
+  //const weather = data;
+ // const loading = false;
+ // const error = '';
 
   return (
     <div className="App">
