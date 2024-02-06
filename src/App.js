@@ -1,18 +1,22 @@
 import React from 'react';
-import { Connect } from 'react-redux';
+import { connect } from 'react-redux';
+import CurrentWeather from './CurrentWeather'
+import WeatherForm from './WeatherForm';
 import './App.css';
+//import { data } from 'msw/lib/types/context';
 
-function App() {
+function App(props) {
+  const currentWeather = data
+  const loaind = false
+  const error = ''
   return (
     <div className="App">
       <h1>Current Weather Report</h1>
-
-      <form>
-        <input>
-        <button>Search</button>
-        </input>
-      </form>
-
+      <WeatherForm />
+      
+    {
+      loading ? <h3>Loading...</h3> : <CurrentWeather currentWeather={weather}/>
+    }
 
 
     </div>
