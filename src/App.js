@@ -2,32 +2,34 @@ import React from 'react';
 import {connect} from 'react-redux'
 import CurrentWeather from './components/CurrentWeather';
 import WeatherForm from './components/WeatherForm';
-import WeatherList from './components/WeatherList'; // Import WeatherList component
+import WeatherList from './components/WeatherList'; 
 import './App.css';
 
 
 function App(props) {
-  //const weather = data;
- // const loading = false;
- // const error = '';
-
  
-const {loading, weather} = props
+const {loading, error} = props
+
+if(error !== '') {
+  return <h2>{error}</h2>
+}
 
   return (
     <div className="App">
       <h1>Current Weather Report</h1>
       <WeatherForm />
-      {/* Pass the weather data array to WeatherList */}
-      <WeatherList weather={weather} />
+    {
+      loading ? <h3>Waiting for Server...</h3> : <WeatherList/>
+    }
+      
     </div>
   );
 }
 
 const mapStateToProps = state => {
   return{
-    weather: state.weather,
-    loading: state.loading
+    loading: state.loading,
+    error: state.error
   }
 }
 

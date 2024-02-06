@@ -3,7 +3,7 @@ import data from './../data/weatherData';
 const intialState = {
    weather: data,
    loading: false,
-   err: '' 
+   error: '' 
 }
 
 const reducer = (state = intialState, action) => {
