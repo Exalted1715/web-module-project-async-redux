@@ -10,14 +10,16 @@ function App(props) {
  
 const {loading, error} = props
 
-if(error !== '') {
-  return <h2>{error}</h2>
-}
+
 
   return (
     <div className="App">
       <h1>Current Weather Report</h1>
       <WeatherForm />
+
+    {
+      (error !== '') && <h3>{error}</h3>
+    }
     {
       loading ? <h3>Waiting for Server...</h3> : <WeatherList/>
     }
