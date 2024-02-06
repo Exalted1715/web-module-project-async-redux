@@ -1,22 +1,22 @@
-import React from 'react'
+import React from 'react';
 
-const CURRENTWEATHER = (props) => {
-    const {weather} = props
+const CurrentWeather = (props) => {
+    const { weather } = props;
 
-    return (<div class="currentWeather">
-        <p>Image Current Weather Placeholder</p>
-        <h3>{weather.cities}</h3>
-        <div>
-            <p> Humidiy Picture PlaceHolder</p>
-            <h3>{weather.dewpt}</h3>
+    return (
+        <div className="currentWeather">
+            <p>Image Current Weather Placeholder</p>
+            <h3>{weather.city_name}</h3> {/* Assuming city_name is the correct property */}
+            <div>
+                <p> Humidity Picture Placeholder</p> {/* Corrected spelling of "Humidity" */}
+                <h3>{weather.dewpt}</h3> {/* Assuming dewpt is the correct property */}
+            </div>
+            <div>
+                <p> Wind Speed Picture Placeholder</p>
+                <h3>{weather.wind_spd}</h3> {/* Assuming wind_spd is the correct property */}
+            </div>
         </div>
-        <div>
-            <p> Wind Speed Picture PlaceHolder</p>
-            <h3>{weather.wind_spd}</h3>
-        </div>
-    </div>
-    )
-
+    );
 }
 
-export default CURRENTWEATHER
+export default CurrentWeather;

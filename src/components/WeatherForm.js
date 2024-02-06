@@ -1,12 +1,12 @@
-import react from react
+import React from 'react';
 
 const WeatherForm = () => {
-    return(
+    return (
         <form>
-        <input>
-        <button>Search</button>
-        </input>
-      </form>
-    )
+            <input type="text" />
+            <button type="submit">Search</button>
+        </form>
+    );
 }
-export default WeatherForm
+
+export default WeatherForm;
