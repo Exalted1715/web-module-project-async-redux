@@ -1,5 +1,26 @@
+import axios from 'axios';
 export const FETCH_START = 'FETCH_Start';
+export const FETCH_SUCCESS = 'FETCH_SUCCESS';
+
+
+
+export const getWeather = () => {
+    return(dispatch =>{
+
+        dispatch(fetchStart())
+        axios.get('https://api.weatherbit.io/v2.0/current?&postal_code=83709&key=f899a6ac8b82427bb2ed20e594ccad85')
+          .then(res => {
+            console.log(res.data.data[0]);
+           dispatch(fetchSuccess(res.data.data[0]));
+          })
+          
+    });
+}
 
 export const fetchStart = () => {
     return({type: FETCH_START})
+}
+
+export const fetchSuccess = weather =>{
+    return({type:FETCH_SUCCESS, payload: weather})
 }

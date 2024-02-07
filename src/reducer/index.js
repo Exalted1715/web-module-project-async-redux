@@ -1,9 +1,9 @@
 import data from './../data/weatherData';
 
-import { FETCH_START } from '../actions';
+import { FETCH_START, FETCH_SUCCESS } from '../actions';
 
 const intialState = {
-   weather: [],
+   weather: data,
    loading: false,
    error: '' 
 }
@@ -16,6 +16,13 @@ const reducer = (state = intialState, action) => {
             loading: true,
             error: ''
         }
+        case FETCH_SUCCESS:
+            return {
+                ...state,
+                loading: false,
+                weather: action.payload,
+                error: ''
+            }
         default:
             return(state);
     }
