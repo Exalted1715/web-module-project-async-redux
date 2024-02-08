@@ -3,9 +3,9 @@ import data from './../data/weatherData';
 import { FETCH_START, FETCH_SUCCESS } from '../actions';
 
 const intialState = {
-   weather: data,
+   weather: [],
    loading: false,
-   error: '' 
+   error: ''
 }
 
 const reducer = (state = intialState, action) => {

@@ -12,7 +12,7 @@ function App(props) {
   const { loading, error, weather, getWeather } = props;
 
   useEffect(() => {
-    getWeather('92703');
+    getWeather('');
     
   }, []);
 
@@ -22,7 +22,7 @@ function App(props) {
       <WeatherForm />
       <WeatherList />
       {(error !== '') && <h3>{error}</h3>}
-      {loading ? <h3>Waiting for Server...</h3> : <CurrentWeather weather={weather} />}
+      {loading ? <h3></h3> : <CurrentWeather weather={weather} />}
       {/* Render CurrentWeather component with weather data */}
 
       

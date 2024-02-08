@@ -8,11 +8,15 @@ export const getWeather = (searchTerm) => {
     return(dispatch =>{
 
         dispatch(fetchStart())
-        axios.get(`https://api.weatherbit.io/v2.0/current?&postal_code=${searchTerm}&key=f899a6ac8b82427bb2ed20e594ccad85`)
+        return axios.get(`https://api.weatherbit.io/v2.0/current?&postal_code=${searchTerm}&key=f899a6ac8b82427bb2ed20e594ccad85`)
           .then(res => {
-            console.log(res.data.data[0]);
+            
            dispatch(fetchSuccess(res.data.data[0]));
           })
+          .catch(error => {
+            // You can dispatch an action for error handling here if needed
+            console.error('Error fetching weather data:', error);
+        });
           
     });
 }
