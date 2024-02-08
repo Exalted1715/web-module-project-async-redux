@@ -7,7 +7,7 @@ const WeatherList = (props) => {
 
     // Check if weather is not an array or is empty
     if (!Array.isArray(weather) || weather.length === 0) {
-        return <div>No weather data available</div>; // Or any other placeholder
+        return <div></div>; // Or any other placeholder
     }
 
     return (

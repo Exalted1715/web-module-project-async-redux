@@ -9,10 +9,10 @@ import WeatherList from './components/WeatherList';
 import './App.css';
 
 function App(props) {
-  const { loading, error, currentWeather, getWeather } = props;
+  const { loading, error, weather, getWeather } = props;
 
   useEffect(() => {
-    getWeather(92703);
+    getWeather('92703');
     
   }, []);
 
@@ -22,7 +22,7 @@ function App(props) {
       <WeatherForm />
       <WeatherList />
       {(error !== '') && <h3>{error}</h3>}
-      {loading ? <h3>Waiting for Server...</h3> : <CurrentWeather weather={currentWeather} />}
+      {loading ? <h3>Waiting for Server...</h3> : <CurrentWeather weather={weather} />}
       {/* Render CurrentWeather component with weather data */}
 
       
@@ -34,7 +34,7 @@ const mapStateToProps = state => {
   return {
     loading: state.loading,
     error: state.error,
-    currentWeather: state.currentWeather
+    weather: state.weather
   };
 };
 
